@@ -1,4 +1,4 @@
-![Screenshot(ss.jpeg)
+<img src="./ss.jpeg">
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
