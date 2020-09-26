@@ -5,7 +5,7 @@ import RepoList from "./RepoList";
 import User from "./User";
 
 class App extends React.Component {
-  state = { user: "", username: "", repoList: [] };
+  state = { user: "", username: "", repoList: [], selectedRepo: "" };
 
   onSearchBarSubmit = async (inputArea) => {
     const response = await github.get(inputArea);
@@ -13,6 +13,11 @@ class App extends React.Component {
 
     this.setState({ user: response.data });
     this.setState({ repoList: responseRepo.data });
+  };
+
+  onRepoSelect = (selected) => {
+    this.setState({ selectedRepo: selected });
+    console.log(`tıklanan repo: ${selected}`);
   };
 
   render() {
@@ -25,7 +30,10 @@ class App extends React.Component {
               <User data={this.state.user} />
             </div>
             <div className="column">
-              <RepoList repos={this.state.repoList} />
+              <RepoList
+                repos={this.state.repoList}
+                onRepoSelect={this.onRepoSelect}
+              />
             </div>
           </div>
         </div>

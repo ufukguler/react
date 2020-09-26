@@ -1,7 +1,7 @@
 import React from "react";
 import RepoItem from "./RepoItem";
 
-const RepoList = ({ repos }) => {
+const RepoList = ({ repos, onRepoSelect }) => {
   const renderedRepos = repos.map((repo) => {
     return (
       <RepoItem
@@ -9,6 +9,7 @@ const RepoList = ({ repos }) => {
         url={repo.html_url}
         name={repo.name}
         description={repo.description}
+        onRepoSelect={onRepoSelect}
       />
     );
   });
