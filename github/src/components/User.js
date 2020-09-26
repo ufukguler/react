@@ -11,6 +11,7 @@ const User = ({ data }) => {
         <img
           src={data.avatar_url}
           style={{ maxWidth: "280px", borderRadius: "50%" }}
+          alt={data.name}
         />
       </div>
       <div className="content">

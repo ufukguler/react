@@ -11,8 +11,7 @@ class App extends React.Component {
     const response = await github.get(inputArea);
     const responseRepo = await github.get(`${inputArea}/repos`);
 
-    this.setState({ user: response.data });
-    this.setState({ repoList: responseRepo.data });
+    this.setState({ user: response.data, repoList: responseRepo.data });
   };
 
   onRepoSelect = (selected) => {
